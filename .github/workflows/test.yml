@@ -1,0 +1,24 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./my-app
+      - name: Build
+        run: npm run build
+        working-directory: ./my-app
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: public
+          path: ./my-app/public
