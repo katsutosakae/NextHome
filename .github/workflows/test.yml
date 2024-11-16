@@ -18,7 +18,7 @@ jobs:
         run: npm run build
         working-directory: ./my-app
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: public
           path: ./my-app/public
