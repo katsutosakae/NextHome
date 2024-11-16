@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <WebSocketProvider>
       <WebSocketRender/>
-      testdajojo
+      testda
     </WebSocketProvider>
   );
 }
